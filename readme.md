@@ -1,7 +1,7 @@
 customCommands 3.0.1
 ===
 
-This modu#le allows you to
+This module allows you to
 
 * define custom commands as players from widgets
 * module backend handles
@@ -93,8 +93,8 @@ Updating existing command parameters
 
 Happens same as registration
 
-1) send your data again via `sendCustomMessage.RegisterCustomCommand` and the overwrite happens internally
-2) you are informed by new event `CustomCommandRegistered` about update
+1. send your data again via `sendCustomMessage.RegisterCustomCommand` and the overwrite happens internally
+2. you are informed by new event `CustomCommandRegistered` about update
 
 Limitations
 ---
