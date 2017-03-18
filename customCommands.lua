@@ -92,16 +92,16 @@ customCommands = {
 				customCommandsIDToName[cmdID] = internalCmdName -- reverse mapping
 				gadgetHandler:RegisterCMDID(cmdID)
 				
-				-- name to cmdID mapping
-				local encodedCustomCommandsNameToID = customCommands.EncodeLocalNameToID(customCommandsNameToID, playerID)
-				message.SendSyncedInfoTeamPacked("CustomCommandsNameToID", encodedCustomCommandsNameToID , teamID) -- save mapping to global variable so any widget can reload it from there
-				
 				-- register owner player and owner team
 				customCommandsNameToPlayerID[internalCmdName] = playerID
 				customCommandsNameToTeamID[internalCmdName] = teamID
 				
 				-- increase commands counter
 				customCommandsCountsPerTeam[teamID] = customCommandsCountsPerTeam[teamID] + 1
+				
+				-- name to cmdID mapping
+				local encodedCustomCommandsNameToID = customCommands.EncodeLocalNameToID(customCommandsNameToID, playerID)
+				message.SendSyncedInfoTeamPacked("CustomCommandsNameToID", encodedCustomCommandsNameToID , teamID) -- save mapping to global variable so any widget can reload it from there
 			else -- already existing
 				-- we remove all existing instance of old command to make sure it is not forgotten
 				customCommands.RemoveCustomCommandFromAllUnits(cmdName, playerID)
