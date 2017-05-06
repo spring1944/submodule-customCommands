@@ -184,8 +184,7 @@ customCommands = {
 	-- @argument unitID [number] Spring unitID
 	-- @argument unitDefID [number] Spring unitDefID
 	-- @argument teamID [number] Spring teamID
-	-- @argument builderID [number] Spring unitID of builder of given unit
-	["UnitIncomming"] = function(unitID, unitDefID, teamID, builderID)
+	["UnitIncomming"] = function(unitID, unitDefID, teamID)
 		unitName = UnitDefs[unitDefID].name
 		for internalCmdName, cmdDesc in pairs(customCommandsDescriptions) do
 			if (customCommandsNameToTeamID[internalCmdName] == teamID) then -- if ownded by proper team
@@ -197,6 +196,11 @@ customCommands = {
 					else -- or update only
 						Spring.EditUnitCmdDesc(unitID, index, cmdDesc)
 					end
+				end
+			else -- for taken units remove invalid commands (owned only by donator)
+				local index = Spring.FindUnitCmdDesc(unitID, cmdDesc.id)
+				if (index ~= nil) then 
+					Spring.RemoveUnitCmdDesc(unitID, index)
 				end
 			end
 		end

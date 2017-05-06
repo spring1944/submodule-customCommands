@@ -1,4 +1,4 @@
-customCommands 3.0.1
+customCommands 3.0.2
 ===
 
 This module allows you to
