@@ -1,4 +1,4 @@
-customCommands 3.0.2
+customCommands 3.1.0
 ===
 
 This module allows you to
@@ -8,6 +8,11 @@ This module allows you to
   * registration/unregistration of commands
   * informing rest of the game synced way about changes and stored synced list of all commands readable by their owners
   * informing unsynced modules (UI, custom widgets) about changes via unsynced handlers
+  
+Important compatibility notes
+---
+  
+* since 3.1.x should provide tools to be robust on units sharing
 
   
 Actual development references

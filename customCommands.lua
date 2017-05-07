@@ -205,4 +205,21 @@ customCommands = {
 			end
 		end
 	end,
+	
+	-- @description handler API used for removing unit by any means which (re)sets the system to proper state once called (by removing)
+	-- @argument unitID [number] Spring unitID
+	-- @argument unitDefID [number] Spring unitDefID
+	-- @argument teamID [number] Spring teamID
+	-- @comment IMPORTANT NOTE: this funciton removes units commands regards CURRENT team. If supposed to be called to remove commands to solve sharing units cleanup, it should be called with oldTeamID.
+	["UnitRemoved"] = function(unitID, unitDefID, teamID)
+		unitName = UnitDefs[unitDefID].name
+		for internalCmdName, cmdDesc in pairs(customCommandsDescriptions) do
+			if (customCommandsNameToTeamID[internalCmdName] == teamID) then -- if not owned by proper team
+				local index = Spring.FindUnitCmdDesc(unitID, cmdDesc.id)
+				if (index ~= nil) then 
+					Spring.RemoveUnitCmdDesc(unitID, index)
+				end
+			end
+		end
+	end,
 }
