@@ -1,4 +1,4 @@
-customCommands 3.1.0
+customCommands 4.0.0
 ===
 
 This module allows you to
@@ -11,7 +11,8 @@ This module allows you to
   
 Important compatibility notes
 ---
-  
+
+* since 4.0.0 the default expected path of ingame modules is ./modules.lua
 * since 3.1.x should provide tools to be robust on units sharing
 
   
@@ -29,7 +30,7 @@ Mandatory to access the API of custom commands module
 
 ```
 -- get madatory module operators
-VFS.Include("LuaRules/modules.lua") -- modules table
+VFS.Include("modules.lua") -- modules table
 VFS.Include(modules.attach.data.path .. modules.attach.data.head) -- attach lib module
 
 -- get other madatory dependencies
