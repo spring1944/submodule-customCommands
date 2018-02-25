@@ -3,7 +3,7 @@ local moduleInfo = {
 	desc = "Internal API for triggerring unsynced code.",
 	author = "PepeAmpere",
 	date = "2017-02-19",
-	license = "notAlicense",
+	license = "MIT",
 }
 
 local newReceiveCustomMessage = {	

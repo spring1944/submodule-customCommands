@@ -3,7 +3,7 @@ local moduleInfo = {
 	desc = "API helper for external widgets using the module",
 	author = "PepeAmpere",
 	date = "2017-02-13",
-	license = "notAlicense",
+	license = "MIT",
 }
 
 -- @description public API for anyone who wants to inject or edit custom commands via own widget

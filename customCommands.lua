@@ -3,7 +3,7 @@ local moduleInfo = {
 	desc = "customCommands core",
 	author = "PepeAmpere",
 	date = "2017/02/13",
-	license = "notAlicense",
+	license = "MIT",
 }
 
 -- moduel global structures

@@ -3,7 +3,7 @@ local moduleInfo = {
 	desc = "Internal API",
 	author = "PepeAmpere",
 	date = "2017-02-19",
-	license = "notAlicense",
+	license = "MIT",
 }
 
 local newSendCustomMessage = {
